@@ -24,6 +24,7 @@ const App = React.createClass({
   render() {
     return (
       <div>
+        <div className="nav">
         <ul>
           <li>
             {this.state.loggedIn ? (
@@ -32,12 +33,14 @@ const App = React.createClass({
               <Link to="/login">Sign in</Link>
             )}
           </li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/">Home</Link> (changes depending on auth status)</li>
-          <li><Link to="/page2">Page Two</Link> (authenticated)</li>
-          <li><Link to="/user/foo">User: Foo</Link> (authenticated)</li>
+          <li><Link to="/register">Register</Link></li>
+
+          <li><Link to="/user/foo">Github</Link></li>
         </ul>
+        </div>
+        <div className="app-container">
         {this.props.children}
+        </div>
       </div>
     )
   }

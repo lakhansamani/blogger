@@ -1,7 +1,10 @@
 import React from 'react'
 import { History } from 'react-router'
 import auth from '../utils/auth.js'
-
+var belle = require('belle');
+var TextInput = belle.TextInput;
+var Button = belle.Button;
+var Card=belle.Card
 const Login = React.createClass({
 
   mixins: [ History ],
@@ -34,14 +37,20 @@ const Login = React.createClass({
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label><input ref="email" placeholder="email" defaultValue="joe@example.com" /></label>
-        <label><input ref="pass" placeholder="password" /></label> (hint: password1)<br />
-        <button type="submit">login</button>
-        {this.state.error && (
-          <p>Bad login information</p>
-        )}
-      </form>
+      <div className="row">
+        <Card className="columns five offset-by-six" style={{padding:'10px'}}>
+            <h3></h3>
+            <form onSubmit={this.handleSubmit}>
+              <input ref="email" placeholder="email" defaultValue="joe@example.com" className="form-item" />
+              <br/>
+              <input type="password" ref="pass" placeholder="password" className="form-item"/><br />
+              <Button type="submit" primary>login</Button>
+              {this.state.error && (
+                <p>Bad login information</p>
+              )}
+            </form>
+        </Card>
+      </div>
     )
   }
 

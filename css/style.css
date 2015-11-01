@@ -1,0 +1,105 @@
+body{
+	font-family: sans-serif;
+	font-weight: lighter;
+}
+#loader{
+	background: #F1F1F1;
+	min-height: 100vh;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.nav{
+    background: #fff;
+    height: 40px;
+    width: 100%;
+}
+.nav >ul{
+    list-style: none;
+    float: right;
+    clear: both;
+    margin-top: 5px;
+}
+.nav >ul >li{
+    display: inline;
+    padding: 10px;
+}
+.nav >ul >li >a{
+    font-style: normal;
+    text-decoration: none;
+    color:#333;
+    padding-bottom: 5px;
+}
+.nav >ul >li >a:hover{
+    border-bottom: 2px solid #dfdfdf;
+}
+.app-container{
+    margin-top: 10px
+}
+.form-item{
+	display: block;
+    width: 90%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+/* --------------------------------------------------
+Container
+-------------------------------------------------- */
+div#container, div.container { position: relative; width: 940px; margin: 0 auto; padding: 0; }
+ 
+ 
+/* --------------------------------------------------
+Grid
+-------------------------------------------------- */
+.column-row, .row { margin: 0 0 18px -20px; }
+.column, .columns { float: left; display: inline; margin: 0 0 0 20px; }
+ 
+.one { width: 60px; }
+.two { width: 140px; }
+.three { width: 220px; }
+.four { width: 300px; }
+.five { width: 380px; }
+.six { width: 460px; }
+.seven { width: 540px; }
+.eight { width: 620px; }
+.nine { width: 700px; }
+.ten { width: 780px; }
+.eleven { width: 860px; }
+.twelve { width: 940px; }
+ 
+.offset-by-one-half { margin-left: 40px; }
+.offset-by-one { margin-left: 80px; }
+.offset-by-two { margin-left: 160px; }
+.offset-by-three { margin-left: 240px; }
+.offset-by-four { margin-left: 320px; }
+.offset-by-five { margin-left: 400px; }
+.offset-by-six { margin-left: 480px; }
+.offset-by-seven { margin-left: 560px; }
+.offset-by-eight { margin-left: 640px; }
+.offset-by-nine { margin-left: 720px; }
+.offset-by-ten { margin-left: 800px; }
+ 
+/* Clear the columns automagically, thanks @kneath */
+.column-row:after, .row:after, .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+* html .column-row, * html .row, * html .clearfix { height: 1%; }
+.column-row, .row, .clearfix { display: inline-block; }
+.column-row, .row, .clearfix { display: block; }
+ 
+/* IE6 Problems ---------- */
+body.ie .column-row { width: 960px; }
+body.ie .eight .column-row { width: 640px; }
+body.ie .nine .column-row { width: 720px; }
+body.ie .ten .column-row { width: 800px; }
+body.ie .eleven .column-row { width: 880px; }
+body.ie .two-thirds .column-row { width: 640px; }

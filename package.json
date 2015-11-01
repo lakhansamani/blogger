@@ -26,5 +26,8 @@
     "react-router": "^1.0.0-rc3",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "belle": "^1.2.2"
   }
 }
