@@ -1,3 +1,10 @@
+var Appbase=require('appbase-js');
+var appbase=new Appbase({
+  url: 'https://scalr.api.appbase.io',
+  appname: 'blog',
+  username: 'h5aIUPBPO',
+  password: '348cee55-1054-4021-ad35-15f93016e876'
+})
 module.exports = {
   login(email, pass, cb) {
     cb = arguments[arguments.length - 1]
@@ -36,14 +43,45 @@ module.exports = {
 }
 
 function pretendRequest(email, pass, cb) {
-  setTimeout(() => {
-    if (email === 'joe@example.com' && pass === 'password1') {
-      cb({
-        authenticated: true,
-        token: Math.random().toString(36).substring(7)
-      })
-    } else {
-      cb({ authenticated: false })
-    }
-  }, 0)
+  // setTimeout(() => {
+  //   if (email === 'joe@example.com' && pass === 'password1') {
+  //     cb({
+  //       authenticated: true,
+  //       token: Math.random().toString(36).substring(7)
+  //     })
+  //   } else {
+  //     cb({ authenticated: false })
+  //   }
+  // }, 0)
+  //console.log()
+  if(email && pass){
+      appbase.search({
+      type:'User',
+      body:{
+        query:{
+          term:{
+            "_id":email
+          }
+        }
+      }
+    }).on('data',function(res){
+      console.log(res);
+      if(res.hits.hits.length>0){
+        if(res.hits.hits[0]._source.password==pass){
+          cb({
+            authenticated:true,
+            token:Math.random().toString(36).substring(7)
+          })
+        }
+        else{
+          cb({authenticated:false})
+        }
+      }
+    }).on('error',function(err){
+      cb({authenticated:false})
+      console.log(err);
+    })
+  }
+  
+  
 }

@@ -33,8 +33,13 @@ const App = React.createClass({
               <Link to="/login">Sign in</Link>
             )}
           </li>
-          <li><Link to="/register">Register</Link></li>
-
+          <li>
+          {this.state.loggedIn ? (
+              <Link to="/blog">Blog</Link>
+            ) : (
+              <Link to="/register">Register</Link>
+          )}
+          </li>
           <li><Link to="/user/foo">Github</Link></li>
         </ul>
         </div>

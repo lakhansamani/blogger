@@ -28,6 +28,7 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "appbase-js": "^0.8.0",
     "belle": "^1.2.2"
   }
 }
