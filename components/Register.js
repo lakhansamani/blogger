@@ -1,5 +1,5 @@
 import React from 'react'
-import { History } from 'react-router'
+import { History, Navigation } from 'react-router'
 var belle = require('belle');
 var Button = belle.Button;
 var Card=belle.Card;
@@ -11,7 +11,7 @@ var appbase=new Appbase({
   password: '348cee55-1054-4021-ad35-15f93016e876'
 })
 const Register = React.createClass({
-  mixins: [ History ],
+  mixins: [ History,Navigation ],
 
   getInitialState() {
     return {
@@ -20,11 +20,11 @@ const Register = React.createClass({
   },
   handleSubmit(event) {
     event.preventDefault()
-    console.log("trying to submit");
     const email = this.refs.email.value
     const pass = this.refs.pass.value
     const name = this.refs.name.value
     var user={};
+    var self=this;
     user.password=pass
     user.name=name;
     user.blogPost=[];
@@ -33,13 +33,8 @@ const Register = React.createClass({
         'id':email,
         body:user
     }).on('data',function(res){
-        const { location } = this.props
-
-        if (location.state && location.state.nextPathname) {
-            this.history.replaceState(null, location.state.nextPathname)
-        } else {
-            this.history.replaceState(null, '/login')
-        }
+        console.log(res);
+        self.history.replaceState(null,'/login',{"done":"true"})
     }).on('error',function(err){
         alert("Sorry something went wrong, please try again");
     })
