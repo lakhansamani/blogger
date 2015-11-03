@@ -31,6 +31,7 @@ module.exports = {
 
   logout: function (cb) {
     delete localStorage.token
+    delete localStorage.id
     if (cb) cb()
     this.onChange(false)
   },
@@ -68,6 +69,7 @@ function pretendRequest(email, pass, cb) {
       console.log(res);
       if(res.hits.hits.length>0){
         if(res.hits.hits[0]._source.password==pass){
+          window.localStorage['id']=email
           cb({
             authenticated:true,
             token:Math.random().toString(36).substring(7)
