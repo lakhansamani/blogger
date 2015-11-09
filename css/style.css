@@ -35,6 +35,9 @@ body{
 .app-container{
     margin-top: 10px
 }
+.txt{
+    height: 150px !important;
+}
 .form-item{
 	display: block;
     width: 90%;
