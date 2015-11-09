@@ -1,14 +1,18 @@
 import React from 'react'
-
+var belle = require('belle');
+var Card=belle.Card
 const Landing = React.createClass({
 
   render() {
     return (
-      <div>
-        <h1>Landing Page</h1>
-        <p>This page is only shown to unauthenticated users.</p>
-        <p>Partial / Lazy loading. Open the network tab while you navigate. Notice that only the required components are downloaded as you navigate around.</p>
-      </div>
+       <div className="row">
+      	<Card className="columns eight offset-by-five">
+      		<h3> Blogger </h3>
+      		<p>
+      			Blogger is live blogging platform created using <a href="https://facebook.github.io/react/" target="_blank">React</a> and <a href="https://appbase.io" target="_blank"> Appbase </a>
+      		</p>
+      	</Card>
+       </div>
     )
   }
 

@@ -53,7 +53,7 @@ const Login = React.createClass({
               <input ref="email" placeholder="Your email, eg. jhon@gmail.com" className="form-item" />
               <br/>
               <input type="password" ref="pass" placeholder="******" className="form-item"/><br />
-              <Button type="submit" primary>Access your blog</Button>
+              <Button type="submit">Access your blog</Button>
               {this.state.error && (
                 <p>Bad login information</p>
               )}

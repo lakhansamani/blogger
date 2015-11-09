@@ -49,7 +49,7 @@ const Register = React.createClass({
                     <input ref="email" placeholder="Your email, eg. jhon@gmail.com" required className="form-item" />
                     <br/>
                     <input type="password" ref="pass" placeholder="Your password, ****" className="form-item"/><br />
-                    <Button type="submit" primary>Register today !</Button>
+                    <Button type="submit">Register today !</Button>
                 </form>
             </Card>
         </div>
