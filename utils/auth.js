@@ -44,17 +44,6 @@ module.exports = {
 }
 
 function pretendRequest(email, pass, cb) {
-  // setTimeout(() => {
-  //   if (email === 'joe@example.com' && pass === 'password1') {
-  //     cb({
-  //       authenticated: true,
-  //       token: Math.random().toString(36).substring(7)
-  //     })
-  //   } else {
-  //     cb({ authenticated: false })
-  //   }
-  // }, 0)
-  //console.log()
   if(email && pass){
       appbase.search({
       type:'User',
@@ -69,7 +58,7 @@ function pretendRequest(email, pass, cb) {
       console.log(res);
       if(res.hits.hits.length>0){
         if(res.hits.hits[0]._source.password==pass){
-          window.localStorage['id']=email
+          window.localStorage['id']=email;
           cb({
             authenticated:true,
             token:Math.random().toString(36).substring(7)
@@ -84,6 +73,6 @@ function pretendRequest(email, pass, cb) {
       console.log(err);
     })
   }
-  
-  
+
+
 }

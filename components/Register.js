@@ -27,7 +27,6 @@ const Register = React.createClass({
     var self=this;
     user.password=pass
     user.name=name;
-    user.blogPost=[];
     appbase.index({
         'type':'User',
         'id':email,
