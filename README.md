@@ -1,6 +1,6 @@
 # blogger
 
-Live blogging platform developed using [appbase.io](https://appbase.io/) and [Reat](https://facebook.github.io/react/) .
+Live blogging platform developed using [appbase.io](https://appbase.io/) and [React](https://facebook.github.io/react/) .
 
 ## Features
 
