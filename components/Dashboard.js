@@ -16,6 +16,9 @@ const Dashboard = React.createClass({
   getInitialState: function() {
     return {value: 'Write your post here in markdown!',title:'Title'};
   },
+  componentDidMount: function() {
+    this.submitFrom=this.submitFrom.bind(this);
+  },
   handleChange: function() {
     this.setState({value: this.refs.textarea.value});
   },
@@ -29,6 +32,9 @@ const Dashboard = React.createClass({
     e.preventDefault();
     var t=this.state.value;
     t=t.replace(/\n\r?/g, '\s\s');
+    this.setState({title:"",value:""});
+    this.refs.textarea.value="";
+    this.refs.title.value="";
     appbase.index({
       type:"Posts",
       "id":Date.now(),
@@ -38,12 +44,11 @@ const Dashboard = React.createClass({
         'description':t,
       }
     }).on('data',function(response){
-      this.setState({title:''});
-      this.setState({value:''});
+
     }).on('error',function(err){
       alert("Sorry there was some error");
     })
-  }.bind(this),
+  },
   render: function() {
     return (
       <div className="row">

@@ -8,12 +8,21 @@ body{
     margin-left: -10px;
     margin-right: -10px;
 }
+
 .nav{
     background: #333;
     height: 50px;
     width: 100%;
     margin-top: -10px;
     margin-bottom: 20px;
+}
+.brand{
+	color:#fff;
+   position: absolute;
+   padding: 15px 20px;
+   text-decoration: none;
+   font-size: 18px;
+   font-weight: bold;
 }
 .nav >ul{
     list-style: none;
@@ -67,14 +76,14 @@ body{
 Container
 -------------------------------------------------- */
 div#container, div.container { position: relative; width: 940px; margin: 0 auto; padding: 0; }
- 
- 
+
+
 /* --------------------------------------------------
 Grid
 -------------------------------------------------- */
 .column-row, .row { margin: 0 0 18px -20px; }
 .column, .columns { float: left; display: inline; margin: 0 0 0 20px; }
- 
+
 .one { width: 60px; }
 .two { width: 140px; }
 .three { width: 220px; }
@@ -87,7 +96,7 @@ Grid
 .ten { width: 780px; }
 .eleven { width: 860px; }
 .twelve { width: 940px; }
- 
+
 .offset-by-one-half { margin-left: 40px; }
 .offset-by-one { margin-left: 80px; }
 .offset-by-two { margin-left: 160px; }
@@ -99,13 +108,13 @@ Grid
 .offset-by-eight { margin-left: 640px; }
 .offset-by-nine { margin-left: 720px; }
 .offset-by-ten { margin-left: 800px; }
- 
+
 /* Clear the columns automagically, thanks @kneath */
 .column-row:after, .row:after, .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
 * html .column-row, * html .row, * html .clearfix { height: 1%; }
 .column-row, .row, .clearfix { display: inline-block; }
 .column-row, .row, .clearfix { display: block; }
- 
+
 /* IE6 Problems ---------- */
 body.ie .column-row { width: 960px; }
 body.ie .eight .column-row { width: 640px; }

@@ -25,6 +25,7 @@ const App = React.createClass({
     return (
       <div>
         <div className="nav">
+        <Link to='/home' className="brand">Blogger</Link>
         <ul>
           <li>
             {this.state.loggedIn ? (
@@ -47,7 +48,7 @@ const App = React.createClass({
               <Link to="/register">Register</Link>
           )}
           </li>
-          <li><Link to="/user/foo">Github</Link></li>
+          <li><a href="https://github.com/lakhansamani/blogger" target="_blank">Github</a></li>
         </ul>
         </div>
         <div className="app-container">
