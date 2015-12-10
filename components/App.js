@@ -34,8 +34,15 @@ const App = React.createClass({
             )}
           </li>
           <li>
+            {this.state.loggedIn ? (
+              <Link to="/posts">Posts</Link>
+            ) : (
+              <Link to="/login">Posts</Link>
+            )}
+          </li>
+          <li>
           {this.state.loggedIn ? (
-              <Link to="/blog">Blog</Link>
+              <Link to="/">Write post</Link>
             ) : (
               <Link to="/register">Register</Link>
           )}

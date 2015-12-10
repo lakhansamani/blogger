@@ -24,6 +24,13 @@ export default {
         })
       }
     },
+    { path: '/posts',
+      getComponent: (location, cb) => {
+        require.ensure([], (require) => {
+          cb(null, require('../components/Posts'))
+        })
+      }
+    },
     { path: '/register',
       getComponent: (location, cb) => {
         require.ensure([], (require) => {
@@ -73,17 +80,6 @@ export default {
         return require.ensure([], (require) => {
           cb(null, require('../components/Landing'))
         })
-      },
-      indexRoute: {
-        getComponent: (location, cb) => {
-          // Only load if we're logged in
-          if (auth.loggedIn()) {
-            return require.ensure([], (require) => {
-              cb(null, require('../components/PageOne'))
-            })
-          }
-          return cb()
-        }
       },
       childRoutes: [
         { onEnter: redirectToLogin,

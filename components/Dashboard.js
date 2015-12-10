@@ -27,13 +27,15 @@ const Dashboard = React.createClass({
   },
   submitFrom:function(e){
     e.preventDefault();
+    var t=this.state.value;
+    t=t.replace(/\n\r?/g, '\s\s');
     appbase.index({
       type:"Posts",
       "id":Date.now(),
       body:{
         'user':localStorage.id,
         'title':this.state.title,
-        'description':this.state.value,
+        'description':t,
       }
     }).on('data',function(response){
       this.setState({title:''});
@@ -41,7 +43,7 @@ const Dashboard = React.createClass({
     }).on('error',function(err){
       alert("Sorry there was some error");
     })
-  },
+  }.bind(this),
   render: function() {
     return (
       <div className="row">
@@ -56,7 +58,7 @@ const Dashboard = React.createClass({
           ref="textarea"
           defaultValue={this.state.value}/>
           <br/>
-          <Button type="submit">Access your blog</Button>
+          <Button type="submit">Post it</Button>
         <h3>Rendering your post</h3>
         <h4>{this.state.title}</h4>
         <div
