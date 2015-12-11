@@ -1,0 +1,119 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/lakhansamani/.nvm/versions/node/v0.12.7/bin/node',
+1 verbose cli   '/Users/lakhansamani/.nvm/versions/node/v0.12.7/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose readDependencies loading dependencies from /Volumes/Work/forks/blogger/package.json
+5 verbose install where, deps [ '/Volumes/Work/forks/blogger',
+5 verbose install   [ 'appbase-js',
+5 verbose install     'babel-core',
+5 verbose install     'babel-loader',
+5 verbose install     'belle',
+5 verbose install     'express',
+5 verbose install     'history',
+5 verbose install     'marked',
+5 verbose install     'react',
+5 verbose install     'react-dom',
+5 verbose install     'react-router',
+5 verbose install     'webpack',
+5 verbose install     'babel-eslint',
+5 verbose install     'react-hot-loader',
+5 verbose install     'webpack-dev-server' ] ]
+6 verbose install where, peers [ '/Volumes/Work/forks/blogger', [] ]
+7 verbose installManyTop reading for lifecycle /Volumes/Work/forks/blogger/package.json
+8 info preinstall blogger@1.0.0
+9 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/appbase-js/package.json
+10 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/babel-core/package.json
+11 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/babel-eslint/package.json
+12 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/babel-loader/package.json
+13 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/belle/package.json
+14 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/express/package.json
+15 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/history/package.json
+16 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/marked/package.json
+17 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/react/package.json
+18 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/react-dom/package.json
+19 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/react-hot-loader/package.json
+20 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/react-router/package.json
+21 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/webpack/package.json
+22 verbose installManyTop reading scoped package data from /Volumes/Work/forks/blogger/node_modules/webpack-dev-server/package.json
+23 info package.json appbase-js@0.8.1 No repository field.
+24 verbose readDependencies loading dependencies from /Volumes/Work/forks/blogger/package.json
+25 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/appbase-js/package.json
+26 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/babel-core/package.json
+27 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/babel-eslint/package.json
+28 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/babel-loader/package.json
+29 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/belle/package.json
+30 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/express/package.json
+31 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/history/package.json
+32 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/marked/package.json
+33 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/react/package.json
+34 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/react-dom/package.json
+35 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/react-hot-loader/package.json
+36 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/react-router/package.json
+37 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/webpack/package.json
+38 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/webpack-dev-server/package.json
+39 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/.bin/marked/package.json
+40 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/.bin/webpack/package.json
+41 verbose targetResolver reading package data from /Volumes/Work/forks/blogger/node_modules/.bin/webpack-dev-server/package.json
+42 verbose already installed skipping react@^0.14.1 /Volumes/Work/forks/blogger
+43 verbose already installed skipping react-dom@^0.14.1 /Volumes/Work/forks/blogger
+44 verbose already installed skipping react-router@^1.0.0-rc3 /Volumes/Work/forks/blogger
+45 verbose already installed skipping webpack@^1.12.2 /Volumes/Work/forks/blogger
+46 verbose already installed skipping babel-eslint@^4.0.5 /Volumes/Work/forks/blogger
+47 verbose already installed skipping react-hot-loader@^1.2.8 /Volumes/Work/forks/blogger
+48 verbose already installed skipping webpack-dev-server@^1.12.1 /Volumes/Work/forks/blogger
+49 verbose already installed skipping appbase-js@^0.8.0 /Volumes/Work/forks/blogger
+50 verbose already installed skipping babel-core@^5.8.33 /Volumes/Work/forks/blogger
+51 verbose already installed skipping babel-loader@^5.3.3 /Volumes/Work/forks/blogger
+52 verbose already installed skipping belle@^1.2.2 /Volumes/Work/forks/blogger
+53 verbose already installed skipping express@^4.13.3 /Volumes/Work/forks/blogger
+54 verbose already installed skipping history@^1.13.0 /Volumes/Work/forks/blogger
+55 verbose already installed skipping marked@^0.3.5 /Volumes/Work/forks/blogger
+56 silly install resolved []
+57 info build /Volumes/Work/forks/blogger
+58 info linkStuff blogger@1.0.0
+59 silly linkStuff blogger@1.0.0 has /Volumes/Work/forks as its parent node_modules
+60 verbose linkBins blogger@1.0.0
+61 verbose linkMans blogger@1.0.0
+62 verbose rebuildBundles blogger@1.0.0
+63 verbose rebuildBundles [ '.bin',
+63 verbose rebuildBundles   'appbase-js',
+63 verbose rebuildBundles   'babel-core',
+63 verbose rebuildBundles   'babel-eslint',
+63 verbose rebuildBundles   'babel-loader',
+63 verbose rebuildBundles   'belle',
+63 verbose rebuildBundles   'express',
+63 verbose rebuildBundles   'history',
+63 verbose rebuildBundles   'marked',
+63 verbose rebuildBundles   'react',
+63 verbose rebuildBundles   'react-dom',
+63 verbose rebuildBundles   'react-hot-loader',
+63 verbose rebuildBundles   'react-router',
+63 verbose rebuildBundles   'webpack',
+63 verbose rebuildBundles   'webpack-dev-server' ]
+64 info install blogger@1.0.0
+65 info postinstall blogger@1.0.0
+66 verbose unsafe-perm in lifecycle true
+67 info prepublish blogger@1.0.0
+68 verbose validateInstall loading /Volumes/Work/forks/blogger/package.json for validation
+69 verbose stack Error: The package history does not satisfy its siblings' peerDependencies requirements!
+69 verbose stack     at /Users/lakhansamani/.nvm/versions/node/v0.12.7/lib/node_modules/npm/lib/install.js:125:32
+69 verbose stack     at /Users/lakhansamani/.nvm/versions/node/v0.12.7/lib/node_modules/npm/lib/install.js:267:7
+69 verbose stack     at /Users/lakhansamani/.nvm/versions/node/v0.12.7/lib/node_modules/npm/node_modules/read-installed/read-installed.js:138:5
+69 verbose stack     at /Users/lakhansamani/.nvm/versions/node/v0.12.7/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+69 verbose stack     at cb (/Users/lakhansamani/.nvm/versions/node/v0.12.7/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+69 verbose stack     at /Users/lakhansamani/.nvm/versions/node/v0.12.7/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+69 verbose stack     at cb (/Users/lakhansamani/.nvm/versions/node/v0.12.7/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+69 verbose stack     at /Users/lakhansamani/.nvm/versions/node/v0.12.7/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+69 verbose stack     at cb (/Users/lakhansamani/.nvm/versions/node/v0.12.7/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+69 verbose stack     at /Users/lakhansamani/.nvm/versions/node/v0.12.7/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+70 verbose cwd /Volumes/Work/forks/blogger
+71 error Darwin 15.0.0
+72 error argv "/Users/lakhansamani/.nvm/versions/node/v0.12.7/bin/node" "/Users/lakhansamani/.nvm/versions/node/v0.12.7/bin/npm" "install"
+73 error node v0.12.7
+74 error npm  v2.11.3
+75 error code EPEERINVALID
+76 error peerinvalid The package history does not satisfy its siblings' peerDependencies requirements!
+76 error peerinvalid Peer react-router@1.0.2 wants history@1.13.x
+77 verbose exit [ 1, true ]
