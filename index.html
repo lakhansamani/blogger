@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blogger</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="js/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/appbase.js"></script>
+    <script src="js/react.js"></script>
+    <script src="config.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script type="text/javascript" src="js/md.js"></script>
+  </head>
+  <body>
+    <div id="postlist"></div>
+
+    <script type="text/babel">
+        var appbase = new Appbase({
+          url:credentials.url,
+          appname:credentials.appname,
+          username:credentials.username,
+          password:credentials.password
+        })
+        var Data = {};
+        var dataChange = function(callback){
+            if(callback){
+              callback(Data);
+                appbase.searchStream({
+                  type:'Posts',
+                  body:{
+                    query:{
+                      match_phrase:{
+                          "user":"lakhan.m.samani@gmail.com"
+                      }
+                    }
+                  }
+                }).on('data',function(response){
+                  console.log(response);
+                  Data.value=response;
+                  callback(Data);
+                }).on('error',function(err){
+                  console.log(err);
+                })
+            }
+            return Data;
+        };
+
+        var PostList = React.createClass({ // function that helps in creating list
+          render:function(){
+            var createItem = function(item){
+              return <li key={item._id}>{item._source.title}</li>;
+            };
+            return <ul>{this.props.items.map(function(value) {
+                return (
+                  <div key={value._id} className="well">
+                      <h5>{value._source.title}</h5>
+                      <div className="content" dangerouslySetInnerHTML={{__html: micromarkdown.parse(value._source.description)}}></div>
+
+                  </div>
+                )
+            })}</ul>;
+          }
+        })
+        var BlogApp = React.createClass({
+
+          getInitialState:function(){
+            return {items:[],text:'',data:this.props.dataChange()};
+          },
+          componentWillMount: function() {
+              this.props.dataChange(this.updateHandler)
+          },
+
+          onChange:function(e){
+            this.setState({text:e.target.value});
+          },
+          updateHandler: function(data) {
+
+              if(data.value){
+                if(data.value.hits){
+                  this.setState({
+                    data: data,
+                    items:data.value.hits.hits
+                  });
+                }
+                //only one row changed
+                else{
+                  console.log(data);
+                  var tmp=this.state.items;
+                  var found=false;
+                  for(var i=0;i<tmp.length;i++){
+                    if(tmp[i]._id===data.value._id){
+                      tmp[i]._source=data.value._source;
+                      found=true;
+                      break;
+                    }
+                  }
+                  if(!found){
+                    tmp.push(data.value);
+                  }
+                  this.setState({items:tmp});
+                  console.log(tmp);
+                }
+              }
+          },
+          render:function(){
+            return(
+
+              <div className="container">
+
+                <h2 style={{marginLeft:'35px'}}> Your blog </h2>
+                <hr/>
+
+                <PostList items={this.state.items} />
+
+              </div>
+            );
+          }
+        })
+        ReactDOM.render(<BlogApp dataChange={dataChange} />,document.getElementById('postlist'));
+    </script>
+  </body>
+</html>
