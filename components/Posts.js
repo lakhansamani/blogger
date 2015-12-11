@@ -3,6 +3,7 @@ var belle = require('belle');
 var Button = belle.Button;
 var Card=belle.Card;
 var Appbase=require('appbase-js');
+import appbase from '../config/appbase.js'
 var marked = require('marked');
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -14,12 +15,6 @@ marked.setOptions({
   smartLists: true,
   smartypants: false
 });
-var appbase=new Appbase({
-  url: 'https://scalr.api.appbase.io',
-  appname: 'blog',
-  username: 'h5aIUPBPO',
-  password: '348cee55-1054-4021-ad35-15f93016e876'
-})
 
 var Data = {};
 var dataChange = function(callback){
@@ -70,7 +65,7 @@ var PostApp = React.createClass({
   dataChange : function(callback){
       if(callback){
         callback(Data);
-          appbase.searchStream({
+          appbase.search({
             type:'Posts',
             body:{
               query:{
@@ -81,7 +76,7 @@ var PostApp = React.createClass({
               size:500,
               sort:[
                 {
-                  "_id":"desc"
+                  "_id":"asc"
                 }
               ]
             }
@@ -107,32 +102,34 @@ var PostApp = React.createClass({
   },
   updateHandler: function(data) {
 
-      if(data.value){
-        if(data.value.hits){
-          this.setState({
-            data: data,
-            items:data.value.hits.hits
-          });
-        }
-        //only one row changed
-        else{
-          console.log(data);
-          var tmp=this.state.items;
-          var found=false;
-          for(var i=0;i<tmp.length;i++){
-            if(tmp[i]._id===data.value._id){
-              tmp[i]._source=data.value._source;
-              found=true;
-              break;
-            }
-          }
-          if(!found){
-            tmp.push(data.value);
-          }
-          this.setState({items:tmp});
-          console.log(tmp);
-        }
+
+    if(data.value){
+      if(data.value.hits){
+        this.setState({
+          data: data,
+          items:data.value.hits.hits
+        });
       }
+      //only one row changed
+      else{
+        console.log(data);
+        var tmp=this.state.items;
+        var found=false;
+        for(var i=0;i<tmp.length;i++){
+          if(tmp[i]._id===data.value._id){
+            tmp[i]._source=data.value._source;
+            found=true;
+            break;
+          }
+        }
+        if(!found){
+          tmp.push(data.value);
+        }
+        this.setState({items:tmp});
+        console.log(tmp);
+      }
+    }
+
   },
   render:function(){
     return(
